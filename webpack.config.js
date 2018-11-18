@@ -44,9 +44,9 @@ module.exports = {
         ]
     },
     plugins: [
-        new UglifyJsPlugin(
+        /*new UglifyJsPlugin(
             {exclude: /node_modules/}
-        ),/*
+        ),
         new CopyWebpackPlugin([
             { from: 'src/assets/images', to: 'images' }
         ]),*/

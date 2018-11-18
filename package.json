@@ -4,7 +4,8 @@
   "description": "zengo trial work",
   "main": "index.js",
   "scripts": {
-    "start": "webpack"
+    "prestart": "webpack",
+    "start": "light-server -s . -p 8000"
   },
   "repository": {
     "type": "git",
@@ -27,6 +28,7 @@
     "css-loader": "^0.28.9",
     "eslint": "^4.19.1",
     "eslint-loader": "^2.0.0",
+    "light-server": "^2.6.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^3.10.0"
   },
