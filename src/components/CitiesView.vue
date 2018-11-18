@@ -4,7 +4,10 @@
         <div>Városok:</div>
         <div>
             <ul>
-                <li v-for="city in cities" :key="city.id">{{city.name}}</li>
+                <li v-for="city in cities" :key="city.id">
+                    {{city.name}}
+                    <button @click="removeCity(city.id)">töröl</button>
+                </li>
             </ul>
         </div>
         <div>
@@ -45,6 +48,14 @@
                     .then(city => {
                         this.listCities();
                         console.log(`New city has been added: ${city.name}`)
+                    })
+                    .catch(error => console.log(error));
+            },
+            removeCity(cityId) {
+                citiesModel.removeCityById(cityId)
+                    .then(response => {
+                        this.listCities();
+                        console.log(`City has been removed`)
                     })
                     .catch(error => console.log(error));
             }

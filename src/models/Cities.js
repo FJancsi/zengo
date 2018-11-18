@@ -14,4 +14,9 @@ export default class Cities {
         return this.zengoService.addCityToState(stateId, cityName)
             .then(data => data.data);
     }
+
+    removeCityById(cityId) {
+        return this.zengoService.removeCityById(cityId)
+            .then(data => data);
+    }
 }

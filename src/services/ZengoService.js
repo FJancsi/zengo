@@ -23,4 +23,11 @@ export default class ZengoService {
         })
         .then(response => response.data);
     }
+
+    removeCityById(cityId) {
+        return Vue.axios.delete('/city', {
+            params: {'city_id': cityId}
+        })
+        .then(response => response);
+    }
 }
