@@ -1,0 +1,23 @@
+.cities-container .cities-list {
+    list-style: none;    
+    padding: 0;
+}
+
+.cities-container .cities-list li {
+    margin-bottom: 10px;
+}
+
+.cities-container .cities-list .editor-container {
+    display: inline-block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.cities-container .cities-list .editor-container.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+.cities-container .cities-list input.editable {
+    background-color: white;
+}

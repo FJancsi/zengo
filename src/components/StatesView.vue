@@ -1,11 +1,13 @@
 <template>
-    <div id='states-view'>
-        <label for="states">Megyék:</label>
-        <select v-model="selectedState" id="states">
-            <option v-for="state in states" :value="state" :key="state.id">
-                {{ state.name }}
-            </option>
-        </select>
+    <div id='states-view' class="states-container">
+        <div>
+            <label for="states">Megyék:</label>
+            <select v-model="selectedState" id="states">
+                <option v-for="state in states" :value="state" :key="state.id">
+                    {{ state.name }}
+                </option>
+            </select>
+        </div>
         <cities-view :state="selectedState"></cities-view>
     </div>
 </template>
@@ -33,8 +35,4 @@
     }
 </script>
 
-<style scoped>
-
-</style>
-
-
+<style src="@/assets/css/states.css"></style>

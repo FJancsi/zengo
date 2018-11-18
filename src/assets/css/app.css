@@ -1,0 +1,31 @@
+select, input, button {
+    border-radius: 4px;
+    height: 25px;
+    font-size: 12px;
+    font-family: monospace;
+    border-width: 1px;
+    box-shadow: 2px 2px lightgrey;    
+}
+
+button {
+    cursor: pointer;
+}
+
+button:hover {
+    font-weight: bold;
+    box-shadow: 3px 3px lightgrey;
+}
+
+input {
+    padding-left: 3px;
+    background-color: lightgrey;
+}
+
+h1 {
+    text-shadow: 1px 1px lightgrey;
+    text-align: center;
+}
+
+.app-container {
+    font-family: monospace;
+}

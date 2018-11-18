@@ -1,15 +1,15 @@
 <template>
-    <div id="cities-view" v-if="cities.length > 0">
-        <div>Megye: {{state.name}}</div>
-        <div>Városok:</div>
+    <div id="cities-view" class="cities-container" v-show="cities.length > 0">
+        <h2>Megye: {{state.name}}</h2>
+        <h3>Városok:</h3>
         <div>
-            <ul>
-                <li v-for="city in cities" :key="city.id">
-                    <input type="text" v-model="city.name" @click="toggle">
-                    <div v-show="editable">
+            <ul class="cities-list">
+                <li v-for="(city, index) in cities" :key="index">
+                    <input type="text" v-model="city.name" :class="{editable: city.active}" @click="toggle(index)">
+                    <div class="editor-container" :class="{show: city.active}">
                         <button @click="removeCity(city.id)">töröl</button>
                         <button @click="updateCity(city.name, city.id)">módosít</button>
-                        <button @click="toggle">mégse</button>
+                        <button @click="toggle(index)">mégse</button>
                     </div>
                 </li>
             </ul>
@@ -23,6 +23,7 @@
 </template>
 
 <script>
+    import Vue from 'vue';
     import CitiesModel from '@/models/Cities';
     const citiesModel = new CitiesModel();
     export default {
@@ -31,8 +32,7 @@
         data() {
             return {
                 cities: [],
-                newCity: '',
-                editable: false
+                newCity: ''
             }
         },
         watch: {
@@ -72,15 +72,13 @@
                     })
                     .catch(error => console.log(error));
             },
-            toggle() {
-                this.editable = !this.editable;
+            toggle(index) {
+                this.cities[index].active ?
+                    Vue.delete(this.cities[index], 'active') :
+                    Vue.set(this.cities[index], 'active', true);
             }
         }
     }
 </script>
 
-<style scoped>
-
-</style>
-
-
+<style src="@/assets/css/cities.css"></style>

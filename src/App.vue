@@ -1,6 +1,7 @@
 <template>
-    <div id="app">
+    <div id="app" class="app-container">
         <h1>Megye - Város</h1>
+        <hr/>
         <states-view></states-view>
     </div>
 </template>
@@ -15,4 +16,4 @@
     };
 </script>
 
-<style scoped></style>
+<style src="@/assets/css/app.css"></style>
