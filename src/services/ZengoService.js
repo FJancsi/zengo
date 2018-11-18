@@ -30,4 +30,12 @@ export default class ZengoService {
         })
         .then(response => response);
     }
+
+    updateCity(cityName, cityId) {
+        return Vue.axios.patch('/city', {
+            'name': cityName,
+            'city_id': cityId
+        })
+        .then(response => response.data);
+    }
 }

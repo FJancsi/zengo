@@ -19,4 +19,9 @@ export default class Cities {
         return this.zengoService.removeCityById(cityId)
             .then(data => data);
     }
+
+    updateCity(cityName, cityId) {
+        return this.zengoService.updateCity(cityName, cityId)
+            .then(data => data);
+    }
 }
