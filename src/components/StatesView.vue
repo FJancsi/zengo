@@ -13,7 +13,7 @@
 <script>
     import States from '@/models/States';
     import CitiesView from '@/components/CitiesView'
-
+    const statesModel = new States();
     export default {
         name: 'states-view',
         data() {
@@ -23,7 +23,6 @@
             }
         },
         mounted() {
-            const statesModel = new States();
             statesModel.getAllStates()
                 .then(states => this.states = states)
                 .catch(error => console.log(error));

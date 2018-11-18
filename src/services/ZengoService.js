@@ -15,4 +15,12 @@ export default class ZengoService {
             })
             .then(response => response.data);
     }
+
+    addCityToState(stateId, cityName) {
+        return Vue.axios.put('/city', {
+            'state_id': stateId,
+            'name': cityName
+        })
+        .then(response => response.data);
+    }
 }
