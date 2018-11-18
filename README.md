@@ -4,9 +4,11 @@ zengo trial work
 How to start:
 - npm install
 - npm start
-Option #1
+
+Option #1:
 - open index.html
-Option #2
+
+Option #2:
 - npm run start-server
 - open http://localhost:8000
 
