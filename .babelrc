@@ -1,1 +1,7 @@
-{}
+{
+    "presets": [
+      ["env", { "modules": "commonjs" }],
+      "stage-3"
+    ],
+    "comments": false
+  }
